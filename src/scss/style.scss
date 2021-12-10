@@ -5,6 +5,10 @@
 @import 'reset';
 @import 'mixins';
 
+body{
+    overflow-x: hidden;
+}
+
 .container{
     margin: 0 auto;
     width: calc(100% - 4rem);
@@ -17,11 +21,21 @@
 }
 
 header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    position: relative;
+    z-index: 10;
+    background-color: #fff;
     nav{
         padding: 1rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         ul{
             display: flex;
             > li{
@@ -36,11 +50,92 @@ header{
                 }
             }
         }
+        & + a{
+            @include respond-above(xs){
+                display: none;
+            }
+        }
+        @include respond-below(xs){
+            display: none;
+        }
     }
 }
 
 section.introduce{
     background-color: $c_very_light_gray;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    background-image: url('../../images/bg-intro-desktop.svg');
+    padding: 10rem 0;
+    background-repeat: no-repeat;
+    background-position: top 0;
+    &::after{
+        background-image: url(../../images/image-mockups.png);
+        position: absolute;
+        z-index: 5;
+        height: 100vh;
+        content: "";
+        display: block;
+        width: 100%;
+        top: -20%;
+        right: 0;
+        background-position: 50% top;
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include respond-above(md){
+            background-size: inherit;
+            background-position: top left;
+            width: 50%;
+            top: -20%;
+            right: -9rem;
+        }
+    }
+    @include respond-above(md){
+        background-position: left 50vw top 65%;
+    }
+    .container{
+        @include respond-above(md){
+            text-align: left;
+            display: flex;
+        }
+        &>div{
+            width: 100%;
+            text-align: center;
+            padding-top: 40vh;
+            @include respond-above(md){
+                padding-top: 0;
+                width: 50%;
+                text-align: left;
+            }
+        }
+        
+    }
+    h1{
+        color: $c_dark_blue;
+        font-size: 2.5rem;
+        font-weight: 100;
+        padding: 2rem 0;
+        padding-top: 0;
+        @include respond-above(xs){
+            font-size: 4rem;
+        }
+    }
+    p{
+        font-size: 1.5rem;
+        color: $c_grayish_blue;
+        line-height: 2rem;
+        @include respond-above(xs){
+            padding-bottom: 2rem;
+        }
+    }
+    a{
+        display: inline-block;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        background: linear-gradient(90deg, $c_lime_green 0%, $c_bright_gyan 100%);
+        color: #FFF;
+    }
 }
 
 section.benefits{
