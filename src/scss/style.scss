@@ -1,0 +1,61 @@
+@use "sass:map";
+@use "sass:list";
+
+@import 'variables';
+@import 'reset';
+@import 'mixins';
+
+.container{
+    margin: 0 auto;
+    width: calc(100% - 4rem);
+    @include respond-above(lg){
+        width: calc(map.get($breakpoints, lg) - 10rem);
+    }
+    @include respond-above(xl){
+        width: calc(map.get($breakpoints, xl) - 10rem);
+    }
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    nav{
+        padding: 1rem 0;
+        ul{
+            display: flex;
+            > li{
+                padding: 0.5rem; 
+            }
+            a{
+                padding: 0.5rem 0.5rem;
+                display: block;
+                color: $c_grayish_blue;
+                &:hover{
+                    color: $c_dark_blue;
+                }
+            }
+        }
+    }
+}
+
+section.introduce{
+    background-color: $c_very_light_gray;
+}
+
+section.benefits{
+    background-color: $c_light_grayish_blue;
+}
+
+section.articles{
+    background-color: $c_very_light_gray;
+}
+
+footer{
+    background-color: $c_dark_blue;
+    padding: 2rem 0;
+    color: $c_grayish_blue;
+    a{
+        color: $c_grayish_blue;
+    }
+}
