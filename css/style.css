@@ -18,6 +18,10 @@ body {
   overflow-x: hidden;
 }
 
+h1, h2, h3 {
+  color: #2d314d;
+}
+
 .container {
   margin: 0 auto;
   width: calc(100% - 4rem);
@@ -48,6 +52,7 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 70%;
 }
 header nav ul {
   display: flex;
@@ -62,6 +67,13 @@ header nav ul a {
 }
 header nav ul a:hover {
   color: #2d314d;
+}
+header nav ul + a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  background: linear-gradient(90deg, #31d35c 0%, #2bb7da 100%);
+  color: #FFF;
 }
 @media (min-width: 576px) {
   header nav + a {
@@ -161,11 +173,104 @@ section.introduce a {
 }
 
 section.benefits {
+  padding: 6rem 0;
   background-color: #f3f4f6;
+}
+section.benefits .container > h2 {
+  font-weight: 100;
+  font-size: 2.6rem;
+}
+section.benefits .container > p {
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  color: #9698a6;
+  line-height: 2rem;
+  padding-bottom: 4rem;
+}
+section.benefits .container > div {
+  text-align: center;
+}
+@media (min-width: 576px) {
+  section.benefits .container > div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+section.benefits .benefit {
+  width: 100%;
+  text-align: center;
+}
+@media (min-width: 576px) {
+  section.benefits .benefit {
+    width: 23%;
+    text-align: left;
+  }
+}
+section.benefits .benefit::before {
+  content: "";
+  display: block;
+  background-image: url("../images/icon-api.svg");
+  background-repeat: no-repeat;
+  height: 5rem;
+  width: 5rem;
+  background-position: center;
+  margin: 0 auto;
+}
+@media (min-width: 576px) {
+  section.benefits .benefit::before {
+    margin: 0;
+    background-position: left;
+  }
+}
+section.benefits .benefit h3 {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+}
+section.benefits .benefit p {
+  padding: 1rem 0;
+  font-size: 1.1rem;
+  color: #9698a6;
+  line-height: 2rem;
 }
 
 section.articles {
   background-color: #fafafa;
+  padding: 6rem 0;
+}
+section.articles .container > h2 {
+  font-weight: 100;
+  font-size: 2.6rem;
+  padding-bottom: 2rem;
+}
+section.articles .leads {
+  display: flex;
+  justify-content: space-between;
+}
+section.articles .leads div {
+  width: 22%;
+  background-color: #FFF;
+  padding: 1rem;
+  position: relative;
+}
+section.articles .leads div span, section.articles .leads div p {
+  color: #9698a6;
+}
+section.articles .leads div h3 {
+  padding: 1rem 0;
+}
+section.articles .leads div span {
+  padding: 1rem 0;
+  display: block;
+}
+section.articles .leads div p {
+  line-height: 1.6rem;
+}
+section.articles .leads div img {
+  position: relative;
+  left: -1rem;
+  top: -1rem;
+  width: calc(100% + 2rem);
+  height: auto;
 }
 
 footer {
