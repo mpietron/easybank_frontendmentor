@@ -18,7 +18,9 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #2d314d;
 }
 
@@ -73,7 +75,7 @@ header nav ul + a {
   padding: 1rem 2rem;
   border-radius: 2rem;
   background: linear-gradient(90deg, #31d35c 0%, #2bb7da 100%);
-  color: #FFF;
+  color: #fff;
 }
 @media (min-width: 576px) {
   header nav + a {
@@ -116,7 +118,6 @@ section.introduce::after {
     background-position: top left;
     width: 50%;
     top: -20%;
-    right: -9rem;
   }
 }
 @media (min-width: 992px) {
@@ -169,7 +170,7 @@ section.introduce a {
   padding: 1rem 2rem;
   border-radius: 2rem;
   background: linear-gradient(90deg, #31d35c 0%, #2bb7da 100%);
-  color: #FFF;
+  color: #fff;
 }
 
 section.benefits {
@@ -248,11 +249,12 @@ section.articles .leads {
 }
 section.articles .leads div {
   width: 22%;
-  background-color: #FFF;
+  background-color: #fff;
   padding: 1rem;
   position: relative;
 }
-section.articles .leads div span, section.articles .leads div p {
+section.articles .leads div span,
+section.articles .leads div p {
   color: #9698a6;
 }
 section.articles .leads div h3 {
@@ -275,10 +277,55 @@ section.articles .leads div img {
 
 footer {
   background-color: #2d314d;
-  padding: 2rem 0;
+  padding: 2.5rem 0;
   color: #9698a6;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+footer .about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+footer .about > ul:first-of-type {
+  display: flex;
+}
+footer .about > ul:first-of-type li {
+  padding: 0 0.5rem;
+}
+footer .about > ul:first-of-type li a {
+  padding: 0.5rem 0.5rem 0 0;
+}
+footer .about-links {
+  display: flex;
+  justify-content: space-around;
+  width: 35%;
+}
+footer .about-links ul li {
+  padding: 0.5rem 0;
 }
 footer a {
   color: #9698a6;
+}
+footer .copy {
+  width: 40%;
+  text-align: right;
+}
+footer .copy span,
+footer .copy a {
+  display: block;
+}
+footer .copy a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  background: linear-gradient(90deg, #31d35c 0%, #2bb7da 100%);
+  color: #fff;
+}
+footer .copy span {
+  padding-top: 1rem;
 }
 /*# sourceMappingURL=style.css.map */
